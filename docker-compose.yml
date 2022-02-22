@@ -8,8 +8,11 @@ services:
     volumes:
       - ./nginx/default.conf:/etc/nginx/conf.d/default.conf:ro
 
+# image: renegade768/node-app за image будет браться мой образ с докерхаба, но мы так же можем и локально забилдить с --build
+
   node-app:
     build: .
+    image: renegade768/node-app
     environment:
       - PORT=3000
     # означает, что node-app начнет развертку после mongo контейнера развертывания
